@@ -1,0 +1,51 @@
+﻿@section scripts
+{
+    <script>
+        @Html.RequireJs("app/common", "app/home/index");
+    </script>
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Please complete the following:</h3>
+<ol class="round">
+</ol>
+<div>
+
+<span>Your Industry?</span></br>
+<select data-bind=" options: industries,
+                    optionsText: 'name',
+                    optionsValue: 'value',
+                    value: industry,
+                    optionsCaption: 'Choose...'"></select>
+</div>
+<div>
+    <span>What feature do you use the most?</span></br>
+    <input data-bind="value: feature" />
+</div>
+<div>
+    <span>How would you rate your experience?</span></br>
+    <ol>
+        <li><input type="radio" name="rating" value="1" data-bind="checked: ratingText" style="width:20px" />(Worst)</li>
+        <li><input type="radio" name="rating" value="2" data-bind="checked: ratingText" style="width:20px"/></li>
+        <li><input type="radio" name="rating" value="3" data-bind="checked: ratingText" style="width:20px"/></li>
+        <li><input type="radio" name="rating" value="4" data-bind="checked: ratingText" style="width:20px"/></li>
+        <li><input type="radio" name="rating" value="5" data-bind="checked: ratingText" style="width:20px"/>(Best)</li>
+    </ol>
+</div>
+<div>
+    <span>What can we improve?</span></br>
+    <input data-bind="value: improve" />
+</div>
+<div>
+    <span>Any other feedback?</span></br>
+    <input data-bind="value: userFeedback" />
+</div>
+<input data-bind="click: submit" type="button" value="Submit"/>
